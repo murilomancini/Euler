@@ -24,6 +24,8 @@ def checkStringFriendly(myString):
                     break
                 size += 1
             d += size - 1
+            if soma > 10:
+                break
     return boolFactor
 
 def checkString(mySequence, size, initial):
