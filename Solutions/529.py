@@ -1,9 +1,9 @@
 def t(n):
     results = 0
-    #for i in range(1, 10**n):
-    if checkStringFriendly(str(919)):
+    for i in range(1, 10**n):
+        if checkStringFriendly(str(i)):
             results += 1
-            #print(i)
+            print(i)
     return results
 
 def checkStringFriendly(myString):
@@ -11,24 +11,25 @@ def checkStringFriendly(myString):
     boolFactor = False
     if len(digits) > 1:
          d =0
-         while d < len(digits):
+         while d < len(digits)-1:
             soma = 0
-            size = 1
+            size = 2
             boolFactor = False
-            while soma <= 10:
+            while soma < 10:
+                soma = checkString(digits, size, d)
                 if soma == 10:
                     boolFactor = True
+                    break
                 if d + size >= len(digits):
                     break
-                soma = checkString(digits, size)
-                size +=1
-            d += 1
+                size += 1
+            d += size - 1
     return boolFactor
 
-def checkString(mySequence, size):
+def checkString(mySequence, size, initial):
     soma = 0
     for i in range(0,size):
-         soma += mySequence[i]
+         soma += mySequence[i+initial]
     return soma
 
-print(t(3))
+print(t(4))
