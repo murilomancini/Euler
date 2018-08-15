@@ -34,4 +34,4 @@ def checkString(mySequence, size, initial):
          soma += mySequence[i+initial]
     return soma
 
-print(t(4))
+print(t(3))
